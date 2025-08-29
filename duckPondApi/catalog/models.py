@@ -1,4 +1,5 @@
 from django.db import models
+from gameplay.models import SpawnPoint, PondSection
 
 # Create your models here.
 class Flavor(models.Model):
@@ -35,6 +36,8 @@ class Food(models.Model):
 class Toy(models.Model):
     toy_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, unique=True)
+
+    pond_section = models.ForeignKey(PondSection)
     # description = models.CharField(max_length=500)
 
     class Meta:
@@ -63,6 +66,8 @@ class Weather(models.Model):
 class WaterTemperature(models.Model):
     temp_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, unique=True)
+
+    pond_section = models.ManyToManyField(PondSection)
     # description = models.CharField(max_length=500)
 
     class Meta:
@@ -81,6 +86,8 @@ class Duck(models.Model):
     favorite_food = models.CharField(max_length=100)
     # biography = models.CharField(max_length=500)
     duck_energy = models.IntegerField()
+
+    spawn_point = models.ForeignKey(SpawnPoint)
 
     flavors = models.ManyToManyField(Flavor, through="DuckFlavor")
     water_temp = models.ManyToManyField(WaterTemperature, through="DuckWaterTemp")
