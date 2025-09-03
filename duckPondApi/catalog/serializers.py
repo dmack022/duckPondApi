@@ -11,22 +11,22 @@ class FlavorSerializer(serializers.ModelSerializer):
         model = Flavor
         fields = ["flavor_id", "name"]
 
-class FoodSerializer(serializers.ModelSerializers):
+class FoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = Food
         fields = ["food_id", "name"]
 
-class ToySerializer(serializers.ModelSerializers):
+class ToySerializer(serializers.ModelSerializer):
     class Meta:
         model = Toy
         fields = ["toy_id", "name"]
 
-class WeatherSerializer(serializers.ModelSerializers):
+class WeatherSerializer(serializers.ModelSerializer):
     class Meta:
         model = Weather
         fields = ["weather_id", "name"]
 
-class WaterTemperatureSerializer(serializers.ModelSerializers):
+class WaterTemperatureSerializer(serializers.ModelSerializer):
     class Meta:
         model = WaterTemperature
         fields = ["temp_id", "name"]
@@ -34,31 +34,31 @@ class WaterTemperatureSerializer(serializers.ModelSerializers):
 
 # Relationship Tables
 
-class DuckFlavorSerializer(serializers.ModelSerializers):
+class DuckFlavorSerializer(serializers.ModelSerializer):
     class Meta:
         model = DuckFlavor
         fields = ["duck", "flavor", "preference_value"]
 
 
-class DuckWaterTempSerializer(serializers.ModelSerializers):
+class DuckWaterTempSerializer(serializers.ModelSerializer):
     class Meta:
         model = DuckWaterTemp
         fields = ["duck", "water_temp", "preference_value"]
 
 
-class DuckWeatherSerializer(serializers.ModelSerializers):
+class DuckWeatherSerializer(serializers.ModelSerializer):
     class Meta:
         model = DuckWeather
         fields = ["duck", "weather", "preference_value"]
 
 
-class DuckToySerializer(serializers.ModelSerializers):
+class DuckToySerializer(serializers.ModelSerializer):
     class Meta:
         model = DuckToy
         fields = ["duck", "toy", "preference_value"]
 
 
-class FoodFlavorSerializer(serializers.ModelSerializers):
+class FoodFlavorSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodFlavor
         fields = ["food", "flavor", "preference_value"]

@@ -1,5 +1,5 @@
 from django.db import models
-from catalog.models import Food, WaterTemperature
+# from catalog.models import Food, WaterTemperature
 
 # Create your models here.
 class Pond(models.Model):
@@ -18,7 +18,7 @@ class Pond(models.Model):
     
 class PondSection(models.Model):
     pond_section_id = models.AutoField(primary_key=True)
-    pond_id = models.ForeignKey(Pond)
+    pond_id = models.ForeignKey(Pond, on_delete=models.RESTRICT)
 
     class Meta:
         db_table = "pond_section"
@@ -31,7 +31,7 @@ class PondSection(models.Model):
     
 class SpawnPoint(models.Model):
     spawn_point_id = models.AutoField(primary_key=True)
-    pond_section_id = models.ForeignKey(PondSection)
+    pond_section_id = models.ForeignKey(PondSection, on_delete=models.RESTRICT)
 
     class Meta:
         db_table = "spawn_point"
@@ -44,8 +44,8 @@ class SpawnPoint(models.Model):
 #Relationship Tables
 
 class SpawnPointFood(models.Model):
-    spawn_point = models.ForeignKey(SpawnPoint, on_delete=models.CASCADE, related_name="filled_spawn_point")
-    food = models.ForeignKey(Food, on_delete=models.CASCADE, related_name="food")
+    spawn_point = models.ForeignKey("gameplay.SpawnPoint", on_delete=models.CASCADE, related_name="filled_spawn_point")
+    food = models.ForeignKey("catalog.Food", on_delete=models.CASCADE, related_name="food")
     time_placed = models.DateTimeField()
 
     class Meta:
