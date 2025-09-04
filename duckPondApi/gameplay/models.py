@@ -32,6 +32,9 @@ class PondSection(models.Model):
 class SpawnPoint(models.Model):
     spawn_point_id = models.AutoField(primary_key=True)
     pond_section_id = models.ForeignKey(PondSection, on_delete=models.RESTRICT)
+    duck = models.ForeignKey(
+        "catalog.Duck", on_delete=models.SET_NULL, null=True, blank=True, related_name="spawn_points"
+    )
 
     class Meta:
         db_table = "spawn_point"

@@ -87,7 +87,7 @@ class Duck(models.Model):
     # biography = models.CharField(max_length=500)
     duck_energy = models.IntegerField()
 
-    spawn_point = models.ForeignKey("gameplay.SpawnPoint", on_delete=models.RESTRICT)
+    # spawn_point = models.ForeignKey("gameplay.SpawnPoint", on_delete=models.RESTRICT)
 
     flavors = models.ManyToManyField(Flavor, through="DuckFlavor")
     water_temp = models.ManyToManyField(WaterTemperature, through="DuckWaterTemp")
