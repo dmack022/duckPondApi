@@ -61,4 +61,4 @@ class DuckToySerializer(serializers.ModelSerializer):
 class FoodFlavorSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodFlavor
-        fields = ["food", "flavor", "preference_value"]
+        fields = ["food", "flavor", "strength"]
