@@ -1,0 +1,42 @@
+[
+{
+  "model": "catalog.watertemperature",
+  "pk": 1,
+  "fields": {
+    "name": "Cold",
+    "pond_section": []
+  }
+},
+{
+  "model": "catalog.watertemperature",
+  "pk": 2,
+  "fields": {
+    "name": "Cool",
+    "pond_section": []
+  }
+},
+{
+  "model": "catalog.watertemperature",
+  "pk": 3,
+  "fields": {
+    "name": "Neutral",
+    "pond_section": []
+  }
+},
+{
+  "model": "catalog.watertemperature",
+  "pk": 4,
+  "fields": {
+    "name": "Warm",
+    "pond_section": []
+  }
+},
+{
+  "model": "catalog.watertemperature",
+  "pk": 5,
+  "fields": {
+    "name": "Hot",
+    "pond_section": []
+  }
+}
+]

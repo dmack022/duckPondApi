@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics, viewsets
-from .models import Duck, Food, Flavor, DuckFlavor, FoodFlavor
-from .serializers import DuckSerializer, FoodSerializer, FlavorSerializer, DuckFlavorSerializer, FoodFlavorSerializer
+from .models import Duck, Food, Flavor, DuckFlavor, FoodFlavor, WaterTemperature, Weather
+from .serializers import DuckSerializer, FoodSerializer, FlavorSerializer, DuckFlavorSerializer, FoodFlavorSerializer, WaterTemperatureSerializer, WeatherSerializer
 
 class DuckViewSet(viewsets.ModelViewSet):
     queryset = Duck.objects.all()
@@ -14,6 +14,16 @@ class FoodViewSet(viewsets.ModelViewSet):
 class FlavorViewSet(viewsets.ModelViewSet):
     queryset = Flavor.objects.all()
     serializer_class = FlavorSerializer
+
+class WeatherViewSet(viewsets.ModelViewSet):
+    queryset = Weather.objects.all()
+    serializer_class = WeatherSerializer
+
+class WaterTemperatureViewSet(viewsets.ModelViewSet):
+    queryset = WaterTemperature.objects.all()
+    serializer_class = WaterTemperatureSerializer
+
+# Relationship ViewSets
 
 class DuckFlavorViewSet(viewsets.ModelViewSet):
     queryset = DuckFlavor.objects.all()

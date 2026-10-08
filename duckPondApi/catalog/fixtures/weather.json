@@ -1,0 +1,58 @@
+[
+{
+  "model": "catalog.weather",
+  "pk": 1,
+  "fields": {
+    "name": "Sunny"
+  }
+},
+{
+  "model": "catalog.weather",
+  "pk": 2,
+  "fields": {
+    "name": "Cloudy"
+  }
+},
+{
+  "model": "catalog.weather",
+  "pk": 3,
+  "fields": {
+    "name": "Rain"
+  }
+},
+{
+  "model": "catalog.weather",
+  "pk": 4,
+  "fields": {
+    "name": "Thunder Storm"
+  }
+},
+{
+  "model": "catalog.weather",
+  "pk": 5,
+  "fields": {
+    "name": "Snowy"
+  }
+},
+{
+  "model": "catalog.weather",
+  "pk": 6,
+  "fields": {
+    "name": "Blizzard"
+  }
+},
+{
+  "model": "catalog.weather",
+  "pk": 7,
+  "fields": {
+    "name": "Windy"
+  }
+},
+{
+  "model": "catalog.weather",
+  "pk": 8,
+  "fields": {
+    "name": "Fog"
+  }
+}
+]
