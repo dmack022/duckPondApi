@@ -31,24 +31,6 @@ class Food(models.Model):
     def __str__(self):
         return f"{self.name}"
     
-    
-
-class Toy(models.Model):
-    toy_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=50, unique=True)
-
-    pond_section = models.ForeignKey("gameplay.PondSection", on_delete=models.RESTRICT)
-    # description = models.CharField(max_length=500)
-
-    class Meta:
-        db_table = "toy"
-        verbose_name = "Toy"
-        verbose_name_plural = "Toys"
-
-    def __str__(self):
-        return f"{self.name}"
-    
-
 class Weather(models.Model):
     weather_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, unique=True)
@@ -93,7 +75,6 @@ class Duck(models.Model):
     flavors = models.ManyToManyField(Flavor, through="DuckFlavor")
     water_temp = models.ManyToManyField(WaterTemperature, through="DuckWaterTemp")
     weather = models.ManyToManyField(Weather, through="DuckWeather")
-    toy = models.ManyToManyField(Toy, through="DuckToy")
 
     class Meta:
         db_table = "ducks"  # Explicit table name
@@ -102,6 +83,18 @@ class Duck(models.Model):
 
     def __str__(self):
         return f"{self.name} (Rarity: {self.rarity})"
+
+class Decoy(models.Model):
+    decoy_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50, unique=True)
+
+    class Meta:
+        db_table = "decoy"
+        verbose_name = "Decoy"
+        verbose_name_plural = "Decoys"
+
+    def __str__(self):
+        return f"{self.name}"
 
 # Relationship Models
 
@@ -145,20 +138,6 @@ class DuckWeather(models.Model):
                 fields=["duck", "weather"], name="unique_duck_weather"
             )
         ]
-
-class DuckToy(models.Model):
-    duck = models.ForeignKey(Duck, on_delete=models.CASCADE, related_name="toy_preferences")
-    toy = models.ForeignKey(Toy, on_delete=models.CASCADE, related_name="ducks")
-    preference_value = models.IntegerField()
-
-    class Meta:
-        db_table = "duck_toy"  # Explicit table name
-        constraints = [
-            models.UniqueConstraint(
-                fields=["duck", "toy"], name="unique_duck_toy"
-            )
-        ]
-
 
 class FoodFlavor(models.Model):
     food = models.ForeignKey(Food, on_delete=models.CASCADE, related_name="foods")

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Duck, Flavor, Food, Toy, Weather, WaterTemperature, FoodFlavor, DuckToy, DuckWeather, DuckWaterTemp, DuckFlavor
+from .models import Duck, Flavor, Food, Weather, WaterTemperature, FoodFlavor, DuckWeather, DuckWaterTemp, DuckFlavor
 
 class DuckSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,11 +15,6 @@ class FoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = Food
         fields = ["food_id", "name"]
-
-class ToySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Toy
-        fields = ["toy_id", "name"]
 
 class WeatherSerializer(serializers.ModelSerializer):
     class Meta:
@@ -50,12 +45,6 @@ class DuckWeatherSerializer(serializers.ModelSerializer):
     class Meta:
         model = DuckWeather
         fields = ["duck", "weather", "preference_value"]
-
-
-class DuckToySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = DuckToy
-        fields = ["duck", "toy", "preference_value"]
 
 
 class FoodFlavorSerializer(serializers.ModelSerializer):
