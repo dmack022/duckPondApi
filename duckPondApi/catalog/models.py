@@ -85,6 +85,7 @@ class Duck(models.Model):
     rarity = models.IntegerField()
     favorite_food = models.CharField(max_length=100)
     # biography = models.CharField(max_length=500)
+    best_friend = models.ForeignKey("self", on_delete=models.SET_NULL, null=True, blank=True)
     duck_energy = models.IntegerField()
 
     # spawn_point = models.ForeignKey("gameplay.SpawnPoint", on_delete=models.RESTRICT)

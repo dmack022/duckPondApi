@@ -6,6 +6,7 @@
     "name": "Feathers",
     "rarity": 0,
     "favorite_food": "White Bread",
+    "best_friend": 5,
     "duck_energy": 10
   }
 },
@@ -16,6 +17,7 @@
     "name": "Charlotte",
     "rarity": 1,
     "favorite_food": "Lavender Bread",
+    "best_friend": 4,
     "duck_energy": 50
   }
 },
@@ -26,6 +28,7 @@
     "name": "Earl Gray",
     "rarity": 3,
     "favorite_food": "English Muffin",
+    "best_friend": null,
     "duck_energy": 100
   }
 },
@@ -36,6 +39,7 @@
     "name": "Daisy",
     "rarity": 2,
     "favorite_food": "Blueberry Muffin",
+    "best_friend": 2,
     "duck_energy": 60
   }
 },
@@ -46,6 +50,7 @@
     "name": "Quack",
     "rarity": 0,
     "favorite_food": "Peas",
+    "best_friend": null,
     "duck_energy": 15
   }
 }
