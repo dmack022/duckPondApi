@@ -1,0 +1,66 @@
+[
+{
+  "model": "gameplay.spawnpoint",
+  "pk": 1,
+  "fields": {
+    "pond_section_id": 3,
+    "duck": null
+  }
+},
+{
+  "model": "gameplay.spawnpoint",
+  "pk": 2,
+  "fields": {
+    "pond_section_id": 3,
+    "duck": null
+  }
+},
+{
+  "model": "gameplay.spawnpoint",
+  "pk": 3,
+  "fields": {
+    "pond_section_id": 3,
+    "duck": null
+  }
+},
+{
+  "model": "gameplay.spawnpoint",
+  "pk": 4,
+  "fields": {
+    "pond_section_id": 3,
+    "duck": null
+  }
+},
+{
+  "model": "gameplay.spawnpoint",
+  "pk": 5,
+  "fields": {
+    "pond_section_id": 4,
+    "duck": null
+  }
+},
+{
+  "model": "gameplay.spawnpoint",
+  "pk": 6,
+  "fields": {
+    "pond_section_id": 4,
+    "duck": null
+  }
+},
+{
+  "model": "gameplay.spawnpoint",
+  "pk": 7,
+  "fields": {
+    "pond_section_id": 4,
+    "duck": null
+  }
+},
+{
+  "model": "gameplay.spawnpoint",
+  "pk": 8,
+  "fields": {
+    "pond_section_id": 4,
+    "duck": null
+  }
+}
+]

@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models, transaction
 # from catalog.models import Food, WaterTemperature
 
 # Create your models here.
@@ -24,6 +24,16 @@ class PondSection(models.Model):
         db_table = "pond_section"
         verbose_name = "Pond Section"
         verbose_name_plural = "Pond Sections"
+
+    @transaction.atomic
+    def save(self, *args, **kwargs):
+        is_new = self.pk is None
+        super().save(*args, **kwargs)
+        if is_new:
+            SpawnPoint.objects.bulk_create([
+                SpawnPoint(pond_section_id=self)
+                for _ in range(4)
+            ])
 
     def __str__(self):
         return f"{self.name}"

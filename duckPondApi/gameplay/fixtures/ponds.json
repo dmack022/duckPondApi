@@ -1,0 +1,26 @@
+[
+{
+  "model": "gameplay.pond",
+  "pk": 1,
+  "fields": {
+    "name": "Dom's First Pond",
+    "weather_id": 1
+  }
+},
+{
+  "model": "gameplay.pond",
+  "pk": 2,
+  "fields": {
+    "name": "Second Pond Test",
+    "weather_id": 1
+  }
+},
+{
+  "model": "gameplay.pond",
+  "pk": 3,
+  "fields": {
+    "name": "Third Test Pond",
+    "weather_id": 1
+  }
+}
+]
